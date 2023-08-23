@@ -118,18 +118,18 @@
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M109.92,-319.29C120.71,-320.17 133.16,-321.19 144.54,-322.12"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="144.23,-324.45 150.38,-322.84 144.57,-320.26 144.23,-324.45"/>
 </g>
-<!-- src/app/providers/RouterProvider.tsx -->
+<!-- src/app/providers/AppRouterProvider.tsx -->
 <g id="node4" class="node">
-<title>src/app/providers/RouterProvider.tsx</title>
-<g id="a_node4"><a xlink:href="src/app/providers/RouterProvider.tsx" xlink:title="RouterProvider.tsx">
+<title>src/app/providers/AppRouterProvider.tsx</title>
+<g id="a_node4"><a xlink:href="src/app/providers/AppRouterProvider.tsx" xlink:title="AppRouterProvider.tsx">
 <path fill="#bbfeff" stroke="black" d="M312.83,-334.62C312.83,-334.62 227.17,-334.62 227.17,-334.62 223.96,-334.62 220.75,-331.42 220.75,-328.21 220.75,-328.21 220.75,-321.79 220.75,-321.79 220.75,-318.58 223.96,-315.38 227.17,-315.38 227.17,-315.38 312.83,-315.38 312.83,-315.38 316.04,-315.38 319.25,-318.58 319.25,-321.79 319.25,-321.79 319.25,-328.21 319.25,-328.21 319.25,-331.42 316.04,-334.62 312.83,-334.62"/>
-<text text-anchor="start" x="228.75" y="-322.07" font-family="Helvetica,sans-Serif" font-size="9.00">RouterProvider.tsx</text>
+<text text-anchor="start" x="228.75" y="-322.07" font-family="Helvetica,sans-Serif" font-size="9.00">AppRouterProvider.tsx</text>
 </a>
 </g>
 </g>
-<!-- src/app/providers/index.ts&#45;&gt;src/app/providers/RouterProvider.tsx -->
+<!-- src/app/providers/index.ts&#45;&gt;src/app/providers/AppRouterProvider.tsx -->
 <g id="edge10" class="edge">
-<title>src/app/providers/index.ts&#45;&gt;src/app/providers/RouterProvider.tsx</title>
+<title>src/app/providers/index.ts&#45;&gt;src/app/providers/AppRouterProvider.tsx</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M207.93,-325C209.18,-325 210.46,-325 211.76,-325"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="211.51,-327.1 217.51,-325 211.51,-322.9 211.51,-327.1"/>
 </g>
@@ -151,9 +151,9 @@
 </a>
 </g>
 </g>
-<!-- src/app/providers/RouterProvider.tsx&#45;&gt;src/pages/account/index.ts -->
+<!-- src/app/providers/AppRouterProvider.tsx&#45;&gt;src/pages/account/index.ts -->
 <g id="edge2" class="edge">
-<title>src/app/providers/RouterProvider.tsx&#45;&gt;src/pages/account/index.ts</title>
+<title>src/app/providers/AppRouterProvider.tsx&#45;&gt;src/pages/account/index.ts</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-dasharray="5,2" stroke-opacity="0.200000" d="M274.13,-335.03C282.1,-359.24 305.28,-421.66 343.25,-460 346.39,-463.17 350.05,-466.02 353.89,-468.54"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="353.15,-470.74 359.38,-472 355.3,-467.13 353.15,-470.74"/>
 </g>
@@ -166,9 +166,9 @@
 </a>
 </g>
 </g>
-<!-- src/app/providers/RouterProvider.tsx&#45;&gt;src/pages/bookings/index.ts -->
+<!-- src/app/providers/AppRouterProvider.tsx&#45;&gt;src/pages/bookings/index.ts -->
 <g id="edge3" class="edge">
-<title>src/app/providers/RouterProvider.tsx&#45;&gt;src/pages/bookings/index.ts</title>
+<title>src/app/providers/AppRouterProvider.tsx&#45;&gt;src/pages/bookings/index.ts</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-dasharray="5,2" stroke-opacity="0.200000" d="M279.15,-334.73C291.81,-349.45 317.44,-377.69 343.25,-397 347.34,-400.06 351.89,-402.98 356.45,-405.65"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="355.77,-407.79 362.03,-408.88 357.81,-404.12 355.77,-407.79"/>
 </g>
@@ -181,9 +181,9 @@
 </a>
 </g>
 </g>
-<!-- src/app/providers/RouterProvider.tsx&#45;&gt;src/pages/cabins/index.ts -->
+<!-- src/app/providers/AppRouterProvider.tsx&#45;&gt;src/pages/cabins/index.ts -->
 <g id="edge4" class="edge">
-<title>src/app/providers/RouterProvider.tsx&#45;&gt;src/pages/cabins/index.ts</title>
+<title>src/app/providers/AppRouterProvider.tsx&#45;&gt;src/pages/cabins/index.ts</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-dasharray="5,2" stroke-opacity="0.200000" d="M307.15,-335.12C320.88,-338.97 336.48,-343.34 350.12,-347.16"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="350.41,-349.98 356.75,-349.58 351.54,-345.94 350.41,-349.98"/>
 </g>
@@ -196,9 +196,9 @@
 </a>
 </g>
 </g>
-<!-- src/app/providers/RouterProvider.tsx&#45;&gt;src/pages/dashboard/index.ts -->
+<!-- src/app/providers/AppRouterProvider.tsx&#45;&gt;src/pages/dashboard/index.ts -->
 <g id="edge5" class="edge">
-<title>src/app/providers/RouterProvider.tsx&#45;&gt;src/pages/dashboard/index.ts</title>
+<title>src/app/providers/AppRouterProvider.tsx&#45;&gt;src/pages/dashboard/index.ts</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-dasharray="5,2" stroke-opacity="0.200000" d="M308.09,-314.94C321.67,-311.25 336.97,-307.1 350.35,-303.47"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="351.59,-304.77 356.83,-301.17 350.49,-300.71 351.59,-304.77"/>
 </g>
@@ -211,9 +211,9 @@
 </a>
 </g>
 </g>
-<!-- src/app/providers/RouterProvider.tsx&#45;&gt;src/pages/login/index.ts -->
+<!-- src/app/providers/AppRouterProvider.tsx&#45;&gt;src/pages/login/index.ts -->
 <g id="edge6" class="edge">
-<title>src/app/providers/RouterProvider.tsx&#45;&gt;src/pages/login/index.ts</title>
+<title>src/app/providers/AppRouterProvider.tsx&#45;&gt;src/pages/login/index.ts</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-dasharray="5,2" stroke-opacity="0.200000" d="M276.3,-314.96C287.39,-294.35 314.44,-246.13 343.25,-210 350.58,-200.8 359.72,-191.46 367.6,-183.94"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="368.91,-185.71 371.85,-180.08 366.03,-182.65 368.91,-185.71"/>
 </g>
@@ -226,9 +226,9 @@
 </a>
 </g>
 </g>
-<!-- src/app/providers/RouterProvider.tsx&#45;&gt;src/pages/settings/index.ts -->
+<!-- src/app/providers/AppRouterProvider.tsx&#45;&gt;src/pages/settings/index.ts -->
 <g id="edge7" class="edge">
-<title>src/app/providers/RouterProvider.tsx&#45;&gt;src/pages/settings/index.ts</title>
+<title>src/app/providers/AppRouterProvider.tsx&#45;&gt;src/pages/settings/index.ts</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-dasharray="5,2" stroke-opacity="0.200000" d="M273.52,-315.08C280.95,-286.97 304.73,-205.09 343.25,-147 349.66,-137.33 358.55,-128.05 366.5,-120.68"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="367.81,-122.54 370.88,-116.98 365.01,-119.41 367.81,-122.54"/>
 </g>
@@ -241,9 +241,9 @@
 </a>
 </g>
 </g>
-<!-- src/app/providers/RouterProvider.tsx&#45;&gt;src/pages/users/index.ts -->
+<!-- src/app/providers/AppRouterProvider.tsx&#45;&gt;src/pages/users/index.ts -->
 <g id="edge8" class="edge">
-<title>src/app/providers/RouterProvider.tsx&#45;&gt;src/pages/users/index.ts</title>
+<title>src/app/providers/AppRouterProvider.tsx&#45;&gt;src/pages/users/index.ts</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-dasharray="5,2" stroke-opacity="0.200000" d="M272.2,-315.12C276.7,-280.89 294.88,-165 343.25,-84 349.12,-74.18 357.78,-64.98 365.73,-57.71"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="367.02,-58.62 370.15,-53.09 364.25,-55.46 367.02,-58.62"/>
 </g>
@@ -256,9 +256,9 @@
 </a>
 </g>
 </g>
-<!-- src/app/providers/RouterProvider.tsx&#45;&gt;src/shared/lib/react&#45;router/index.ts -->
+<!-- src/app/providers/AppRouterProvider.tsx&#45;&gt;src/shared/lib/react&#45;router/index.ts -->
 <g id="edge9" class="edge">
-<title>src/app/providers/RouterProvider.tsx&#45;&gt;src/shared/lib/react&#45;router/index.ts</title>
+<title>src/app/providers/AppRouterProvider.tsx&#45;&gt;src/shared/lib/react&#45;router/index.ts</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M271,-334.67C271.58,-367.88 278.49,-477.69 343.25,-523 408.89,-568.92 453.73,-562.36 523.5,-523 552.86,-506.43 569.04,-468.36 576.43,-445.45"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="579.28,-445.29 579,-438.94 575.26,-444.08 579.28,-445.29"/>
 </g>

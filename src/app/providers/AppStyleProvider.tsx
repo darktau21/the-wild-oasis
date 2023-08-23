@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react';
 import { createGlobalStyle } from 'styled-components';
 
-const style = createGlobalStyle`
+const StyleProvider = createGlobalStyle`
   :root {
     /* Indigo */
     --color-brand-50: #eef2ff;
@@ -146,7 +146,12 @@ const style = createGlobalStyle`
 `;
 
 const AppStyleProvider = ({ children }: PropsWithChildren) => {
-  return <>{children}</>;
+  return (
+    <>
+      <StyleProvider />
+      {children}
+    </>
+  );
 };
 
-export default StylesProvider;
+export default AppStyleProvider;
