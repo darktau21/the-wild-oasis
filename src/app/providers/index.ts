@@ -1,3 +1,3 @@
-import AppRouterProvider from '@app/providers/RouterProvider';
+import AppRouterProvider from '@app/providers/AppRouterProvider';
 
 export { AppRouterProvider };
