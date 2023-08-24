@@ -12,3 +12,5 @@ root.render(
     </AppStyleProvider>
   </StrictMode>
 );
+
+console.log(import.meta.env.REACT_SUPABASE_KEY);
