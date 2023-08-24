@@ -25,7 +25,6 @@ const StyleProvider = createGlobalStyle`
     --color-grey-700: #374151;
     --color-grey-800: #1f2937;
     --color-grey-900: #111827;
-
     --color-blue-100: #e0f2fe;
     --color-blue-700: #0369a1;
     --color-green-100: #dcfce7;
@@ -36,17 +35,13 @@ const StyleProvider = createGlobalStyle`
     --color-silver-700: #374151;
     --color-indigo-100: #e0e7ff;
     --color-indigo-700: #4338ca;
-
     --color-red-100: #fee2e2;
     --color-red-700: #b91c1c;
     --color-red-800: #991b1b;
-
-    --backdrop-color: rgba(255, 255, 255, 0.1);
-
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
-    --shadow-md: 0px 0.6rem 2.4rem rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 2.4rem 3.2rem rgba(0, 0, 0, 0.12);
-
+    --backdrop-color: rgb(255 255 255 / 10%);
+    --shadow-sm: 0 1px 2px rgb(0 0 0 / 4%);
+    --shadow-md: 0px 0.6rem 2.4rem rgb(0 0 0 / 6%);
+    --shadow-lg: 0 2.4rem 3.2rem rgb(0 0 0 / 12%);
     --border-radius-tiny: 3px;
     --border-radius-sm: 5px;
     --border-radius-md: 7px;
@@ -73,9 +68,8 @@ const StyleProvider = createGlobalStyle`
   }
 
   body {
-    font-family: "Poppins", sans-serif;
+    font-family: Poppins, sans-serif;
     color: var(--color-grey-700);
-
     transition: color 0.3s, background-color 0.3s;
     min-height: 100vh;
     line-height: 1.5;
@@ -104,17 +98,17 @@ const StyleProvider = createGlobalStyle`
     color: var(--color-grey-500);
   }
 
+  /* Parent selector, finally 😃 */
+  button:has(svg) {
+    line-height: 0;
+  }
+  
   input:focus,
   button:focus,
   textarea:focus,
   select:focus {
     outline: 2px solid var(--color-brand-600);
     outline-offset: -1px;
-  }
-
-  /* Parent selector, finally 😃 */
-  button:has(svg) {
-    line-height: 0;
   }
 
   a {
