@@ -12,6 +12,7 @@
     "lint:css": "stylelint './src/**/*.tsx' --fix"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.33.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
@@ -36,6 +37,7 @@
     "prettier": "^3.0.2",
     "stylelint": "^15.10.3",
     "stylelint-config-standard": "^34.0.0",
+    "supabase": "^1.88.0",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
     "vite-plugin-checker": "^0.6.2"

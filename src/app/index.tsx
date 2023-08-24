@@ -1,4 +1,5 @@
 import { AppRouterProvider, AppStyleProvider } from '@app/providers';
+import supabaseClient from '@shared/api/supabase';
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 
@@ -12,5 +13,3 @@ root.render(
     </AppStyleProvider>
   </StrictMode>
 );
-
-console.log(import.meta.env.REACT_SUPABASE_KEY);
