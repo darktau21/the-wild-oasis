@@ -1,4 +1,6 @@
-import { Header, Sidebar } from '@shared/ui';
+import { Header, Spinner } from '@shared/ui';
+import AppSidebar from '@widgets/AppSidebar';
+import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -10,7 +12,7 @@ const StyledPrimaryLayout = styled.div`
 `;
 
 const StyledMain = styled.main`
-  background-color: green;
+  background-color: var(--color-grey-50);
   padding: 4rem 4.8rem 6.4rem;
 `;
 
@@ -18,9 +20,11 @@ const PrimaryLayout = () => {
   return (
     <StyledPrimaryLayout>
       <Header />
-      <Sidebar />
+      <AppSidebar />
       <StyledMain>
-        <Outlet />
+        <Suspense fallback={<Spinner />}>
+          <Outlet />
+        </Suspense>
       </StyledMain>
     </StyledPrimaryLayout>
   );
