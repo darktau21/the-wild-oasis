@@ -1,6 +1,7 @@
+import { PrimaryLayout } from '@app/layouts';
 import Error from '@pages/error';
 import { PAGE_PATHS } from '@shared/lib/react-router';
-import { lazy, Suspense } from 'react';
+import { lazy } from 'react';
 import {
   createBrowserRouter,
   Navigate,
@@ -17,39 +18,48 @@ const Users = lazy(() => import('@pages/users'));
 
 const router = createBrowserRouter([
   {
-    index: true,
-    element: <Navigate to={PAGE_PATHS.login} />,
-  },
-  {
-    path: PAGE_PATHS.account,
-    element: <Account />,
-  },
-  {
-    path: PAGE_PATHS.bookings,
-    element: <Bookings />,
-  },
-  {
-    path: PAGE_PATHS.cabins,
-    element: <Cabins />,
-  },
-  {
-    path: PAGE_PATHS.dashboard,
-    element: <Dashboard />,
+    element: <PrimaryLayout />,
+    children: [
+      {
+        index: true,
+        element: <Navigate replace={true} to={PAGE_PATHS.login} />,
+      },
+      {
+        path: PAGE_PATHS.account,
+        element: <Account />,
+      },
+      {
+        path: PAGE_PATHS.bookings,
+        element: <Bookings />,
+      },
+      {
+        path: PAGE_PATHS.cabins,
+        element: <Cabins />,
+      },
+      {
+        path: PAGE_PATHS.dashboard,
+        element: <Dashboard />,
+      },
+      {
+        path: PAGE_PATHS.settings,
+        element: <Settings />,
+      },
+      {
+        path: PAGE_PATHS.users,
+        element: <Users />,
+      },
+      {
+        path: PAGE_PATHS.notFound,
+        element: <Error />,
+      },
+    ],
   },
   {
     path: PAGE_PATHS.login,
     element: <Login />,
   },
   {
-    path: PAGE_PATHS.settings,
-    element: <Settings />,
-  },
-  {
-    path: PAGE_PATHS.users,
-    element: <Users />,
-  },
-  {
-    path: PAGE_PATHS.notFound,
+    path: '*',
     element: <Error />,
   },
 ]);

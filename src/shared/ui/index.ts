@@ -1,4 +1,6 @@
-import Heading from '@shared/ui/Heading';
-import Row from '@shared/ui/Row';
+import Heading from './Heading';
+import Row from './Row';
+import Sidebar from './Sidebar';
+import Header from './Header';
 
-export { Heading, Row };
+export { Heading, Row, Sidebar, Header };
