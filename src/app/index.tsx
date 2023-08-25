@@ -1,6 +1,7 @@
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import {
+  AppNotificationsProvider,
   AppQueryProvider,
   AppRouterProvider,
   AppStyleProvider,
@@ -13,7 +14,9 @@ root.render(
   <StrictMode>
     <AppStyleProvider>
       <AppQueryProvider>
-        <AppRouterProvider />
+        <AppNotificationsProvider>
+          <AppRouterProvider />
+        </AppNotificationsProvider>
       </AppQueryProvider>
     </AppStyleProvider>
   </StrictMode>
