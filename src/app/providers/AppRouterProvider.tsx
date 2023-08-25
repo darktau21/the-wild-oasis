@@ -1,4 +1,4 @@
-import { PrimaryLayout } from '@app/layouts';
+import { PrimaryLayout } from '@pages/layouts';
 import Error from '@pages/error';
 import { PAGE_PATHS } from '@shared/lib/react-router';
 import { lazy } from 'react';

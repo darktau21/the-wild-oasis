@@ -1,4 +1,5 @@
-import AppRouterProvider from '@app/providers/AppRouterProvider';
-import AppStyleProvider from '@app/providers/AppStyleProvider';
+import AppRouterProvider from './AppRouterProvider';
+import AppStyleProvider from './AppStyleProvider';
+import AppQueryProvider from './AppQueryProvider';
 
-export { AppRouterProvider, AppStyleProvider };
+export { AppRouterProvider, AppStyleProvider, AppQueryProvider };

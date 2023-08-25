@@ -1,7 +1,10 @@
-import { AppRouterProvider, AppStyleProvider } from '@app/providers';
-import supabaseClient from '@shared/api/supabase';
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
+import {
+  AppQueryProvider,
+  AppRouterProvider,
+  AppStyleProvider,
+} from './providers';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLDivElement
@@ -9,7 +12,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <StrictMode>
     <AppStyleProvider>
-      <AppRouterProvider />
+      <AppQueryProvider>
+        <AppRouterProvider />
+      </AppQueryProvider>
     </AppStyleProvider>
   </StrictMode>
 );
