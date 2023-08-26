@@ -6,9 +6,11 @@ import Logo from './Logo';
 import MainNav from './MainNav';
 import NavigationLink from './NavigationLink';
 import Spinner from './Spinner';
-import Table from './Table';
-import TableHeader from './TableHeader';
-import TableRow from './TableRow';
+import Container from './Container';
+import Button from './Button';
+import * as FormComponents from './Form';
+import * as TableComponents from './Table';
+
 export {
   Heading,
   Row,
@@ -18,7 +20,8 @@ export {
   Logo,
   MainNav,
   Spinner,
-  Table,
-  TableHeader,
-  TableRow,
+  Container,
+  Button,
+  FormComponents,
+  TableComponents,
 };

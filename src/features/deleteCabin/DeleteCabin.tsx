@@ -1,4 +1,5 @@
 import { deleteCabin } from '@shared/api/apiCabins';
+import { Button } from '@shared/ui';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import React from 'react';
 import toast from 'react-hot-toast';
@@ -22,9 +23,14 @@ const DeleteCabin = ({ cabinId }: DeleteCabinProps) => {
     },
   });
   return (
-    <button disabled={isLoading} onClick={() => mutate(cabinId)}>
+    <Button
+      size={'small'}
+      variation={'danger'}
+      disabled={isLoading}
+      onClick={() => mutate(cabinId)}
+    >
       Delete cabin
-    </button>
+    </Button>
   );
 };
 

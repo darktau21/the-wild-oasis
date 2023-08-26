@@ -7,12 +7,12 @@ import {
   Navigate,
   RouterProvider,
 } from 'react-router-dom';
+import Login from '@pages/login';
 
 const Account = lazy(() => import('@pages/account'));
 const Bookings = lazy(() => import('@pages/bookings'));
 const Cabins = lazy(() => import('@pages/cabins'));
 const Dashboard = lazy(() => import('@pages/dashboard'));
-const Login = lazy(() => import('@pages/login'));
 const Settings = lazy(() => import('@pages/settings'));
 const Users = lazy(() => import('@pages/users'));
 

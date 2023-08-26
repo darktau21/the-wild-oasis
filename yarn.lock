@@ -5304,6 +5304,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"nanoid@npm:^4.0.2":
+  version: 4.0.2
+  resolution: "nanoid@npm:4.0.2"
+  bin:
+    nanoid: bin/nanoid.js
+  checksum: 747c399cea4664dd0be1d0ec498ffd1ef8f1f5221676fc8b577e3f46f66d9afcddb9595d63d19a2e78d0bc6cc33984f65e66bf1682c850b9e26288883d96b53f
+  languageName: node
+  linkType: hard
+
 "natural-compare@npm:^1.4.0":
   version: 1.4.0
   resolution: "natural-compare@npm:1.4.0"
@@ -5812,6 +5821,15 @@ __metadata:
   peerDependencies:
     react: ^18.2.0
   checksum: 7d323310bea3a91be2965f9468d552f201b1c27891e45ddc2d6b8f717680c95a75ae0bc1e3f5cf41472446a2589a75aed4483aee8169287909fcd59ad149e8cc
+  languageName: node
+  linkType: hard
+
+"react-hook-form@npm:^7.45.4":
+  version: 7.45.4
+  resolution: "react-hook-form@npm:7.45.4"
+  peerDependencies:
+    react: ^16.8.0 || ^17 || ^18
+  checksum: 1d84c78dadf561bc9e360272c5c856c724426162e13a74929c0517c3eb8004a7f057561fff3bfd4c1121b36d6cf1437399df1dbfd01d0817b9f922503f407d8f
   languageName: node
   linkType: hard
 
@@ -6809,10 +6827,12 @@ __metadata:
     eslint-plugin-react: latest
     eslint-plugin-react-hooks: ^4.6.0
     eslint-plugin-react-refresh: ^0.4.3
+    nanoid: ^4.0.2
     postcss-styled-syntax: ^0.4.0
     prettier: ^3.0.2
     react: ^18.2.0
     react-dom: ^18.2.0
+    react-hook-form: ^7.45.4
     react-hot-toast: ^2.4.1
     react-icons: ^4.10.1
     react-router-dom: ^6.15.0
