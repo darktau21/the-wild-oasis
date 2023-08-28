@@ -6,6 +6,7 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
+    '@feature-sliced',
     'plugin:react/recommended',
     'plugin:@tanstack/eslint-plugin-query/recommended',
     'prettier',

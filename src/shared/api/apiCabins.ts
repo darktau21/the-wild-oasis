@@ -5,13 +5,24 @@ const SUPABASE_URL = import.meta.env.REACT_SUPABASE_URL;
 
 export type NewCabin = {
   name: string;
+  description: string;
   maxCapacity: number;
   regularPrice: number;
   discount: number;
-  image?: File;
+  image?: FileList;
 };
 
-export async function getCabins() {
+export type Cabin = {
+  id: number;
+  name: string;
+  description: string;
+  maxCapacity: number;
+  regularPrice: number;
+  discount: number;
+  imageURL: string | null;
+};
+
+export async function getAll() {
   const { data: cabins, error } = await supabaseClient
     .from('cabins')
     .select('*');
@@ -23,34 +34,49 @@ export async function getCabins() {
   return cabins;
 }
 
-export async function createCabin(newCabin: NewCabin) {
-  const image = newCabin.image;
-  const imageName = `${nanoid(10)}-${image?.name}`.replaceAll('/', '');
-  const imageURL = `${SUPABASE_URL}/storage/v1/object/public/cabin-imgs/${imageName}`;
+export async function create(newCabin: NewCabin) {
+  const errorMessage = 'Could not create cabin';
 
+  const image = newCabin.image?.[0];
   delete newCabin.image;
-  const { data: cabin, error } = await supabaseClient
-    .from('cabins')
-    .insert([{ ...newCabin, image: imageURL }]);
 
-  if (error) {
-    throw new Error('Could create cabin');
+  const { data: cabin, error: creationError } = await supabaseClient
+    .from('cabins')
+    .insert([newCabin])
+    .select('id');
+
+  const cabinID = cabin?.[0].id;
+
+  if (creationError) {
+    throw new Error(errorMessage);
   }
 
-  if (typeof image !== 'undefined') {
+  if (image) {
+    const imageName = `${nanoid(10)}-${image?.name}`.replaceAll('/', '');
+    const imageURL = `${SUPABASE_URL}/storage/v1/object/public/cabin-imgs/${imageName}`;
+
     const { error: storageError } = await supabaseClient.storage
       .from('cabin-imgs')
       .upload(imageName, image);
 
     if (storageError) {
-      throw new Error(storageError.message);
+      await remove(cabinID!);
+      throw new Error(errorMessage);
+    }
+
+    const { error: updatingError } = await supabaseClient
+      .from('cabins')
+      .update({ imageURL })
+      .eq('id', cabinID!);
+
+    if (updatingError) {
+      await remove(cabinID!);
+      throw new Error(errorMessage);
     }
   }
-
-  return cabin;
 }
 
-export async function deleteCabin(id: number) {
+export async function remove(id: number) {
   const { data: cabin, error } = await supabaseClient
     .from('cabins')
     .delete()

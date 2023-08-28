@@ -102,7 +102,7 @@ const StyleProvider = createGlobalStyle`
   button:has(svg) {
     line-height: 0;
   }
-  
+
   input:focus,
   button:focus,
   textarea:focus,

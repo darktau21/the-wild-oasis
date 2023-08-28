@@ -1,8 +1,8 @@
-import { Container, Header, Spinner } from '@shared/ui';
-import AppSidebar from '@widgets/AppSidebar';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import styled from 'styled-components';
+import { Container, Header, Spinner } from '@shared/ui';
+import AppSidebar from './AppSidebar';
 
 const StyledPrimaryLayout = styled.div`
   display: grid;

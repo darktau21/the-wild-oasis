@@ -1,5 +1,5 @@
-import TableRow from './TableRow';
 import styled from 'styled-components';
+import TableRow from './TableRow';
 
 const TableHeader = styled(TableRow)`
   background-color: var(--color-grey-50);

@@ -1,5 +1,5 @@
-import { Heading } from '@shared/ui';
 import styled from 'styled-components';
+import { Heading } from '@shared/ui';
 
 const StyledPageNotFound = styled.main`
   height: 100vh;

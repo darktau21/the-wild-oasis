@@ -1771,6 +1771,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@feature-sliced/eslint-config@npm:^0.1.0-beta.6":
+  version: 0.1.0-beta.6
+  resolution: "@feature-sliced/eslint-config@npm:0.1.0-beta.6"
+  peerDependencies:
+    eslint: ">=6"
+    eslint-plugin-boundaries: ">=2"
+    eslint-plugin-import: ">=2"
+  checksum: 6fedfe6a5950e2bdf84893c9cd6a3ab88bb8fb3e0810052573327ddce83197dfbb254fc9e77cf9248c19cedec7c0565acd8b1e7424100274bcd6ad7bfd800554
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.11.10":
   version: 0.11.10
   resolution: "@humanwhocodes/config-array@npm:0.11.10"
@@ -2817,6 +2828,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"chalk@npm:4.1.2, chalk@npm:^4.0.0, chalk@npm:^4.1.0, chalk@npm:^4.1.1":
+  version: 4.1.2
+  resolution: "chalk@npm:4.1.2"
+  dependencies:
+    ansi-styles: ^4.1.0
+    supports-color: ^7.1.0
+  checksum: fe75c9d5c76a7a98d45495b91b2172fa3b7a09e0cc9370e5c8feb1c567b85c4288e2b3fded7cfdd7359ac28d6b3844feb8b82b8686842e93d23c827c417e83fc
+  languageName: node
+  linkType: hard
+
 "chalk@npm:5.3.0":
   version: 5.3.0
   resolution: "chalk@npm:5.3.0"
@@ -2832,16 +2853,6 @@ __metadata:
     escape-string-regexp: ^1.0.5
     supports-color: ^5.3.0
   checksum: ec3661d38fe77f681200f878edbd9448821924e0f93a9cefc0e26a33b145f1027a2084bf19967160d11e1f03bfe4eaffcabf5493b89098b2782c3fe0b03d80c2
-  languageName: node
-  linkType: hard
-
-"chalk@npm:^4.0.0, chalk@npm:^4.1.0, chalk@npm:^4.1.1":
-  version: 4.1.2
-  resolution: "chalk@npm:4.1.2"
-  dependencies:
-    ansi-styles: ^4.1.0
-    supports-color: ^7.1.0
-  checksum: fe75c9d5c76a7a98d45495b91b2172fa3b7a09e0cc9370e5c8feb1c567b85c4288e2b3fded7cfdd7359ac28d6b3844feb8b82b8686842e93d23c827c417e83fc
   languageName: node
   linkType: hard
 
@@ -3557,7 +3568,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-import-resolver-node@npm:^0.3.7":
+"eslint-import-resolver-node@npm:0.3.9, eslint-import-resolver-node@npm:^0.3.7":
   version: 0.3.9
   resolution: "eslint-import-resolver-node@npm:0.3.9"
   dependencies:
@@ -3586,7 +3597,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-module-utils@npm:^2.7.4, eslint-module-utils@npm:^2.8.0":
+"eslint-module-utils@npm:2.8.0, eslint-module-utils@npm:^2.7.4, eslint-module-utils@npm:^2.8.0":
   version: 2.8.0
   resolution: "eslint-module-utils@npm:2.8.0"
   dependencies:
@@ -3595,6 +3606,21 @@ __metadata:
     eslint:
       optional: true
   checksum: 74c6dfea7641ebcfe174be61168541a11a14aa8d72e515f5f09af55cd0d0862686104b0524aa4b8e0ce66418a44aa38a94d2588743db5fd07a6b49ffd16921d2
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-boundaries@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "eslint-plugin-boundaries@npm:3.4.0"
+  dependencies:
+    chalk: 4.1.2
+    eslint-import-resolver-node: 0.3.9
+    eslint-module-utils: 2.8.0
+    is-core-module: 2.13.0
+    micromatch: 4.0.5
+  peerDependencies:
+    eslint: ">=6.0.0"
+  checksum: a5c5f17c45c52c89ad807ed801837a62458660f3fd603e42e3f1ea04390c7ddffe4363df211eac93ee09a705e26a6205c6c4606b73fe07c3997a50460b457a59
   languageName: node
   linkType: hard
 
@@ -4539,7 +4565,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-core-module@npm:^2.11.0, is-core-module@npm:^2.13.0, is-core-module@npm:^2.5.0, is-core-module@npm:^2.9.0":
+"is-core-module@npm:2.13.0, is-core-module@npm:^2.11.0, is-core-module@npm:^2.13.0, is-core-module@npm:^2.5.0, is-core-module@npm:^2.9.0":
   version: 2.13.0
   resolution: "is-core-module@npm:2.13.0"
   dependencies:
@@ -5128,7 +5154,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"micromatch@npm:^4.0.4, micromatch@npm:^4.0.5":
+"micromatch@npm:4.0.5, micromatch@npm:^4.0.4, micromatch@npm:^4.0.5":
   version: 4.0.5
   resolution: "micromatch@npm:4.0.5"
   dependencies:
@@ -6809,6 +6835,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "the-wild-oasis@workspace:."
   dependencies:
+    "@feature-sliced/eslint-config": ^0.1.0-beta.6
     "@supabase/supabase-js": ^2.33.1
     "@tanstack/eslint-plugin-query": ^4.32.5
     "@tanstack/react-query": ^4.33.0
@@ -6823,6 +6850,7 @@ __metadata:
     eslint: ^8.45.0
     eslint-config-prettier: ^9.0.0
     eslint-import-resolver-typescript: ^3.6.0
+    eslint-plugin-boundaries: ^3.4.0
     eslint-plugin-import: ^2.28.1
     eslint-plugin-react: latest
     eslint-plugin-react-hooks: ^4.6.0

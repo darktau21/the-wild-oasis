@@ -21,7 +21,7 @@ const Form = styled.form<FormProps>`
     css`
       width: 80rem;
     `}
-    
+
   overflow: hidden;
   font-size: 1.4rem;
 `;

@@ -903,7 +903,7 @@
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M1033.89,-298C1051.52,-298 1075.06,-298 1095.13,-298"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="1095.08,-300.1 1101.08,-298 1095.08,-295.9 1095.08,-300.1"/>
 </g>
-<!-- src/features/createCabin/CreateCabinForm.tsx -->
+<!-- src/features/createCabin/createCabin.tsx -->
 <g id="node27" class="node">
 <title>src/features/createCabin/CreateCabinForm.tsx</title>
 <g id="a_node27"><a xlink:href="src/features/createCabin/CreateCabinForm.tsx" xlink:title="CreateCabinForm.tsx">
@@ -912,7 +912,7 @@
 </a>
 </g>
 </g>
-<!-- src/features/createCabin/CreateCabinForm.tsx&#45;&gt;src/shared/ui/index.ts -->
+<!-- src/features/createCabin/createCabin.tsx&#45;&gt;src/shared/ui/index.ts -->
 <g id="edge26" class="edge">
 <title>src/features/createCabin/CreateCabinForm.tsx&#45;&gt;src/shared/ui/index.ts</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M888.3,-606.04C902.23,-619.25 927.22,-643.35 947.5,-665 963.26,-681.83 980.45,-701.92 991.99,-715.68"/>
@@ -927,7 +927,7 @@
 </a>
 </g>
 </g>
-<!-- src/features/createCabin/index.ts&#45;&gt;src/features/createCabin/CreateCabinForm.tsx -->
+<!-- src/features/createCabin/index.ts&#45;&gt;src/features/createCabin/createCabin.tsx -->
 <g id="edge27" class="edge">
 <title>src/features/createCabin/index.ts&#45;&gt;src/features/createCabin/CreateCabinForm.tsx</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M809.12,-596C810.36,-596 811.62,-596 812.9,-596"/>

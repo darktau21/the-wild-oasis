@@ -1,5 +1,5 @@
-import { Database } from './apiTypes';
 import { createClient } from '@supabase/supabase-js';
+import { Database } from './apiTypes';
 
 const env = import.meta.env;
 

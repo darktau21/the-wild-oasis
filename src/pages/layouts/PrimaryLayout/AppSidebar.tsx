@@ -1,5 +1,3 @@
-import { PAGE_PATHS } from '@shared/lib/react-router';
-import { Logo, MainNav, NavigationLink, Sidebar } from '@shared/ui';
 import {
   HiOutlineCalendarDays,
   HiOutlineCog6Tooth,
@@ -7,6 +5,8 @@ import {
   HiOutlineHomeModern,
   HiOutlineUser,
 } from 'react-icons/hi2';
+import { PAGE_PATHS } from '@shared/lib/react-router';
+import { Logo, MainNav, NavigationLink, Sidebar } from '@shared/ui';
 
 const AppSidebar = () => {
   return (

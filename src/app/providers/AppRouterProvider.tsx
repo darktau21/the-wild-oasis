@@ -1,13 +1,13 @@
-import { PrimaryLayout } from '@pages/layouts';
-import Error from '@pages/error';
-import { PAGE_PATHS } from '@shared/lib/react-router';
 import { lazy } from 'react';
 import {
   createBrowserRouter,
   Navigate,
   RouterProvider,
 } from 'react-router-dom';
+import Error from '@pages/error';
+import { PrimaryLayout } from '@pages/layouts';
 import Login from '@pages/login';
+import { PAGE_PATHS } from '@shared/lib/react-router';
 
 const Account = lazy(() => import('@pages/account'));
 const Bookings = lazy(() => import('@pages/bookings'));

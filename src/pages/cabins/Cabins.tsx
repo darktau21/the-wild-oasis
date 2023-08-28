@@ -1,25 +1,17 @@
-import { CreateCabinForm } from '@features/createCabin';
-import { getCabins } from '@shared/api';
-import { Button, Heading, Row, Spinner } from '@shared/ui';
 import { useQuery } from '@tanstack/react-query';
+import { MouseEventHandler, useCallback, useMemo, useState } from 'react';
 import { CabinList } from '@widgets/CabinList';
-import { MouseEventHandler, useState } from 'react';
-import toast from 'react-hot-toast';
+import { CreateCabinForm } from '@features/createCabin';
+import { Cabin, cabinApi } from '@shared/api';
+import { Button, Heading, Row, Spinner } from '@shared/ui';
 
 const Cabins = () => {
   const [showForm, setShowForm] = useState(false);
-  const { status, data: cabins } = useQuery({
-    queryKey: ['cabins'],
-    queryFn: getCabins,
-    onError: (error) => {
-      if (error instanceof Error) {
-        toast.error(error.message);
-      }
-    },
-  });
 
-  const handleShowForm: MouseEventHandler = () =>
+  const handleShowForm: MouseEventHandler = useCallback((event) => {
+    event.preventDefault();
     setShowForm((prevState) => !prevState);
+  }, []);
 
   return (
     <>
@@ -29,10 +21,10 @@ const Cabins = () => {
       </Row>
       <Row>
         {status === 'loading' ? <Spinner /> : null}
-        {status === 'success' ? <CabinList cabins={cabins} /> : null}
+        {status === 'success' ? <CabinList /> : null}
 
         <Button onClick={handleShowForm}>Add new cabin</Button>
-        {showForm && <CreateCabinForm />}
+        {showForm && <CreateCabinForm onCancel={handleShowForm} />}
       </Row>
     </>
   );
