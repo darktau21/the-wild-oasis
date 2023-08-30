@@ -18,49 +18,49 @@ const Users = lazy(() => import('@pages/users'));
 
 const router = createBrowserRouter([
   {
-    element: <PrimaryLayout />,
     children: [
       {
-        index: true,
         element: <Navigate replace={true} to={PAGE_PATHS.login} />,
+        index: true,
       },
       {
-        path: PAGE_PATHS.account,
         element: <Account />,
+        path: PAGE_PATHS.account,
       },
       {
-        path: PAGE_PATHS.bookings,
         element: <Bookings />,
+        path: PAGE_PATHS.bookings,
       },
       {
-        path: PAGE_PATHS.cabins,
         element: <Cabins />,
+        path: PAGE_PATHS.cabins,
       },
       {
-        path: PAGE_PATHS.dashboard,
         element: <Dashboard />,
+        path: PAGE_PATHS.dashboard,
       },
       {
-        path: PAGE_PATHS.settings,
         element: <Settings />,
+        path: PAGE_PATHS.settings,
       },
       {
-        path: PAGE_PATHS.users,
         element: <Users />,
+        path: PAGE_PATHS.users,
       },
       {
-        path: PAGE_PATHS.notFound,
         element: <Error />,
+        path: PAGE_PATHS.notFound,
       },
     ],
+    element: <PrimaryLayout />,
   },
   {
-    path: PAGE_PATHS.login,
     element: <Login />,
+    path: PAGE_PATHS.login,
   },
   {
-    path: '*',
     element: <Error />,
+    path: '*',
   },
 ]);
 

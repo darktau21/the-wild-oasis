@@ -11,13 +11,13 @@ type CreateCabinFormProps = {
 const CreateCabinForm = memo(function CreateCabinForm({
   onCancel,
 }: CreateCabinFormProps) {
-  const { handleSubmit, register, errors } = useMutateQueryForm<NewCabin>({
+  const { errors, handleSubmit, register } = useMutateQueryForm<NewCabin>({
     mutationFn: cabinApi.create,
     queryKey: ['cabins'],
     successMessage: 'Cabin successfully created',
   });
   return (
-    <CabinForm handleSubmit={handleSubmit} register={register} errors={errors}>
+    <CabinForm errors={errors} handleSubmit={handleSubmit} register={register}>
       <Button onClick={onCancel} size={'medium'} variation={'secondary'}>
         Cancel
       </Button>

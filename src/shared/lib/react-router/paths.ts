@@ -1,11 +1,11 @@
 export const PAGE_PATHS = {
-  root: '/',
   account: '/account',
   bookings: '/bookings',
   cabins: '/cabins',
   dashboard: '/dashboard',
   login: '/login',
+  notFound: '/404',
+  root: '/',
   settings: '/settings',
   users: '/users',
-  notFound: '/404',
 };

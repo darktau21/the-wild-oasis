@@ -4,22 +4,22 @@ import supabaseClient from './supabase';
 const SUPABASE_URL = import.meta.env.REACT_SUPABASE_URL;
 
 export type NewCabin = {
-  name: string;
   description: string;
-  maxCapacity: number;
-  regularPrice: number;
   discount: number;
   image?: FileList;
+  maxCapacity: number;
+  name: string;
+  regularPrice: number;
 };
 
 export type Cabin = {
-  id: number;
-  name: string;
   description: string;
-  maxCapacity: number;
-  regularPrice: number;
   discount: number;
-  imageURL: string | null;
+  id: number;
+  imageURL: null | string;
+  maxCapacity: number;
+  name: string;
+  regularPrice: number;
 };
 
 export async function getAll() {
@@ -43,9 +43,10 @@ export async function create(newCabin: NewCabin) {
   const { data: cabin, error: creationError } = await supabaseClient
     .from('cabins')
     .insert([newCabin])
-    .select('id');
+    .select('id')
+    .single();
 
-  const cabinID = cabin?.[0].id;
+  const cabinID = cabin?.id;
 
   if (creationError) {
     throw new Error(errorMessage);

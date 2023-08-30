@@ -1,98 +1,108 @@
 export type Json =
-  | string
-  | number
+  | { [key: string]: Json | undefined }
+  | Json[]
   | boolean
   | null
-  | { [key: string]: Json | undefined }
-  | Json[];
+  | number
+  | string;
 
 export interface Database {
   public: {
+    CompositeTypes: {
+      [_ in never]: never;
+    };
+    Enums: {
+      [_ in never]: never;
+    };
+    Functions: {
+      [_ in never]: never;
+    };
     Tables: {
       bookings: {
-        Row: {
-          cabinId: number | null;
-          cabinPrice: number | null;
-          created_at: string;
-          endDate: string | null;
-          extrasPrice: number | null;
-          guestId: number | null;
-          hasBreak: boolean | null;
-          id: number;
-          isPaid: boolean | null;
-          numGuests: number | null;
-          numNights: number | null;
-          observations: string | null;
-          startDate: string | null;
-          status: string | null;
-          totalPrice: number | null;
-        };
         Insert: {
-          cabinId?: number | null;
-          cabinPrice?: number | null;
+          cabinId?: null | number;
+          cabinPrice?: null | number;
           created_at?: string;
-          endDate?: string | null;
-          extrasPrice?: number | null;
-          guestId?: number | null;
+          endDate?: null | string;
+          extrasPrice?: null | number;
+          guestId?: null | number;
           hasBreak?: boolean | null;
           id?: number;
           isPaid?: boolean | null;
-          numGuests?: number | null;
-          numNights?: number | null;
-          observations?: string | null;
-          startDate?: string | null;
-          status?: string | null;
-          totalPrice?: number | null;
-        };
-        Update: {
-          cabinId?: number | null;
-          cabinPrice?: number | null;
-          created_at?: string;
-          endDate?: string | null;
-          extrasPrice?: number | null;
-          guestId?: number | null;
-          hasBreak?: boolean | null;
-          id?: number;
-          isPaid?: boolean | null;
-          numGuests?: number | null;
-          numNights?: number | null;
-          observations?: string | null;
-          startDate?: string | null;
-          status?: string | null;
-          totalPrice?: number | null;
+          numGuests?: null | number;
+          numNights?: null | number;
+          observations?: null | string;
+          startDate?: null | string;
+          status?: null | string;
+          totalPrice?: null | number;
         };
         Relationships: [
           {
-            foreignKeyName: 'bookings_cabinId_fkey';
             columns: ['cabinId'];
-            referencedRelation: 'cabins';
+            foreignKeyName: 'bookings_cabinId_fkey';
             referencedColumns: ['id'];
+            referencedRelation: 'cabins';
           },
           {
-            foreignKeyName: 'bookings_guestId_fkey';
             columns: ['guestId'];
-            referencedRelation: 'guests';
+            foreignKeyName: 'bookings_guestId_fkey';
             referencedColumns: ['id'];
+            referencedRelation: 'guests';
           },
         ];
+        Row: {
+          cabinId: null | number;
+          cabinPrice: null | number;
+          created_at: string;
+          endDate: null | string;
+          extrasPrice: null | number;
+          guestId: null | number;
+          hasBreak: boolean | null;
+          id: number;
+          isPaid: boolean | null;
+          numGuests: null | number;
+          numNights: null | number;
+          observations: null | string;
+          startDate: null | string;
+          status: null | string;
+          totalPrice: null | number;
+        };
+        Update: {
+          cabinId?: null | number;
+          cabinPrice?: null | number;
+          created_at?: string;
+          endDate?: null | string;
+          extrasPrice?: null | number;
+          guestId?: null | number;
+          hasBreak?: boolean | null;
+          id?: number;
+          isPaid?: boolean | null;
+          numGuests?: null | number;
+          numNights?: null | number;
+          observations?: null | string;
+          startDate?: null | string;
+          status?: null | string;
+          totalPrice?: null | number;
+        };
       };
       cabins: {
-        Row: {
-          created_at: string;
+        Insert: {
+          created_at?: string;
           description: string;
           discount: number;
-          id: number;
-          imageURL: string | null;
+          id?: number;
+          imageURL?: null | string;
           maxCapacity: number;
           name: string;
           regularPrice: number;
         };
-        Insert: {
-          created_at?: string;
+        Relationships: [];
+        Row: {
+          created_at: string;
           description: string;
           discount: number;
-          id?: number;
-          imageURL?: string | null;
+          id: number;
+          imageURL: null | string;
           maxCapacity: number;
           name: string;
           regularPrice: number;
@@ -102,81 +112,71 @@ export interface Database {
           description?: string;
           discount?: number;
           id?: number;
-          imageURL?: string | null;
+          imageURL?: null | string;
           maxCapacity?: number;
           name?: string;
           regularPrice?: number;
         };
-        Relationships: [];
       };
       guests: {
-        Row: {
-          countryFlag: string | null;
-          created_at: string;
-          email: string | null;
-          fullName: string | null;
-          id: number;
-          nationalId: string | null;
-          nationality: string | null;
-        };
         Insert: {
-          countryFlag?: string | null;
+          countryFlag?: null | string;
           created_at?: string;
-          email?: string | null;
-          fullName?: string | null;
+          email?: null | string;
+          fullName?: null | string;
           id?: number;
-          nationalId?: string | null;
-          nationality?: string | null;
-        };
-        Update: {
-          countryFlag?: string | null;
-          created_at?: string;
-          email?: string | null;
-          fullName?: string | null;
-          id?: number;
-          nationalId?: string | null;
-          nationality?: string | null;
+          nationalId?: null | string;
+          nationality?: null | string;
         };
         Relationships: [];
+        Row: {
+          countryFlag: null | string;
+          created_at: string;
+          email: null | string;
+          fullName: null | string;
+          id: number;
+          nationalId: null | string;
+          nationality: null | string;
+        };
+        Update: {
+          countryFlag?: null | string;
+          created_at?: string;
+          email?: null | string;
+          fullName?: null | string;
+          id?: number;
+          nationalId?: null | string;
+          nationality?: null | string;
+        };
       };
       settings: {
-        Row: {
-          breakfastPrice: number | null;
-          created_at: string;
-          id: number;
-          maxBookingLength: number | null;
-          maxGuestsPerBooking: number | null;
-          minBookingLength: number | null;
-        };
         Insert: {
-          breakfastPrice?: number | null;
+          breakfastPrice?: null | number;
           created_at?: string;
           id?: number;
-          maxBookingLength?: number | null;
-          maxGuestsPerBooking?: number | null;
-          minBookingLength?: number | null;
-        };
-        Update: {
-          breakfastPrice?: number | null;
-          created_at?: string;
-          id?: number;
-          maxBookingLength?: number | null;
-          maxGuestsPerBooking?: number | null;
-          minBookingLength?: number | null;
+          maxBookingLength?: null | number;
+          maxGuestsPerBooking?: null | number;
+          minBookingLength?: null | number;
         };
         Relationships: [];
+        Row: {
+          breakfastPrice: null | number;
+          created_at: string;
+          id: number;
+          maxBookingLength: null | number;
+          maxGuestsPerBooking: null | number;
+          minBookingLength: null | number;
+        };
+        Update: {
+          breakfastPrice?: null | number;
+          created_at?: string;
+          id?: number;
+          maxBookingLength?: null | number;
+          maxGuestsPerBooking?: null | number;
+          minBookingLength?: null | number;
+        };
       };
     };
     Views: {
-      [_ in never]: never;
-    };
-    Functions: {
-      [_ in never]: never;
-    };
-    Enums: {
-      [_ in never]: never;
-    };
-    CompositeTypes: {
       [_ in never]: never;
     };
   };

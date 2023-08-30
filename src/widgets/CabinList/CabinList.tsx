@@ -1,16 +1,14 @@
-import { useQuery } from '@tanstack/react-query';
 import { memo } from 'react';
 import { DeleteCabin } from '@features/deleteCabin';
 import { CabinRow } from '@entities/cabin';
-import { type Cabin, cabinApi } from '@shared/api';
+import { Cabin } from '@shared/api';
 import { Spinner, Table, TableHeader } from '@shared/ui';
 
-const CabinList = () => {
-  const { data: cabins } = useQuery({
-    queryFn: cabinApi.getAll,
-    queryKey: ['cabins'],
-  });
+type CabinListProps = {
+  cabins?: Cabin[];
+};
 
+const CabinList = memo(function CabinsList({ cabins }: CabinListProps) {
   if (!cabins?.length) {
     return <Spinner />;
   }
@@ -27,20 +25,21 @@ const CabinList = () => {
       </TableHeader>
       {cabins &&
         cabins.map(
-          ({ id, name, imageURL, maxCapacity, regularPrice, discount }) => (
+          ({ discount, id, imageURL, maxCapacity, name, regularPrice }) => (
             <CabinRow
-              key={id}
-              name={name}
-              maxCapacity={maxCapacity}
-              regularPrice={regularPrice}
               discount={discount}
-              deleteButton={<DeleteCabin cabinId={id} />}
               imageURL={imageURL}
-            />
+              key={id}
+              maxCapacity={maxCapacity}
+              name={name}
+              regularPrice={regularPrice}
+            >
+              <DeleteCabin cabinId={id} />
+            </CabinRow>
           )
         )}
     </Table>
   );
-};
+});
 
 export default CabinList;

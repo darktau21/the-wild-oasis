@@ -4,8 +4,8 @@ import AppRouterProvider from './AppRouterProvider';
 import AppStyleProvider from './AppStyleProvider';
 
 export {
+  AppNotificationsProvider,
+  AppQueryProvider,
   AppRouterProvider,
   AppStyleProvider,
-  AppQueryProvider,
-  AppNotificationsProvider,
 };

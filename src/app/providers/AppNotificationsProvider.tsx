@@ -9,24 +9,24 @@ const AppNotificationsProvider = ({ children }: PropsWithChildren) => {
     <>
       {children}
       <Toaster
-        position={'top-center'}
-        gutter={12}
-        containerStyle={{ margin: '8px' }}
         toastOptions={{
-          success: {
-            duration: SUCCESS_NOTIFICATION_SCREEN_TIME * 1000,
-          },
           error: {
             duration: ERROR_NOTIFICATION_SCREEN_TIME * 1000,
           },
           style: {
+            backgroundColor: 'var(--color-grey-0)',
+            color: 'var(--color-grey-700)',
             fontSize: '16px',
             maxWidth: '500px',
             padding: '16px 24px',
-            backgroundColor: 'var(--color-grey-0)',
-            color: 'var(--color-grey-700)',
+          },
+          success: {
+            duration: SUCCESS_NOTIFICATION_SCREEN_TIME * 1000,
           },
         }}
+        containerStyle={{ margin: '8px' }}
+        gutter={12}
+        position={'top-center'}
       />
     </>
   );

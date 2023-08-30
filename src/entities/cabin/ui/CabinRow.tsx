@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { memo, PropsWithChildren } from 'react';
 import { TableRow } from '@shared/ui';
 import { formatCurrency } from '@shared/utils';
 import CabinDiscount from './CabinDIscount';
@@ -6,22 +6,21 @@ import CabinImg from './CabinImg';
 import CabinName from './CabinName';
 import CabinPrice from './CabinPrice';
 
-type CabinRowProps = {
-  name: string;
-  maxCapacity: number;
-  regularPrice: number;
+type CabinRowProps = PropsWithChildren<{
   discount: number;
-  deleteButton: ReactElement;
-  imageURL: string | null;
-};
-const CabinRow = ({
-  name,
-  maxCapacity,
-  regularPrice,
+  imageURL: null | string;
+  maxCapacity: number;
+  name: string;
+  regularPrice: number;
+}>;
+const CabinRow = memo(function CabinRow({
+  children,
   discount,
-  deleteButton,
   imageURL,
-}: CabinRowProps) => {
+  maxCapacity,
+  name,
+  regularPrice,
+}: CabinRowProps) {
   return (
     <TableRow>
       {imageURL ? <CabinImg src={imageURL} /> : <div />}
@@ -29,9 +28,9 @@ const CabinRow = ({
       <div>Fits up to {maxCapacity} guests</div>
       <CabinPrice>{formatCurrency(regularPrice)}</CabinPrice>
       <CabinDiscount>{discount}</CabinDiscount>
-      {deleteButton}
+      {children}
     </TableRow>
   );
-};
+});
 
 export default CabinRow;

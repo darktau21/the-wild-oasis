@@ -1,6 +1,7 @@
 {
   "extends": [
-    "stylelint-config-standard"
+    "stylelint-config-standard",
+    "@logux/stylelint-config"
   ],
   "customSyntax": "postcss-styled-syntax",
   "rules": {

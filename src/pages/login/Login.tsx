@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 const LoginLayout = styled.main`
-  min-height: 100vh;
   display: grid;
   grid-template-columns: 48rem;
+  gap: 3.2rem;
   align-content: center;
   justify-content: center;
-  gap: 3.2rem;
+  min-height: 100vh;
   background-color: var(--color-grey-50);
 `;
 

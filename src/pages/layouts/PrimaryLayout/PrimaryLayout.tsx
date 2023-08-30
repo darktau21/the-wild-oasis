@@ -6,15 +6,15 @@ import AppSidebar from './AppSidebar';
 
 const StyledPrimaryLayout = styled.div`
   display: grid;
-  grid-template-columns: 26rem 1fr;
   grid-template-rows: auto 1fr;
+  grid-template-columns: 26rem 1fr;
   height: 100vh;
 `;
 
 const StyledMain = styled.main`
-  background-color: var(--color-grey-50);
   padding: 4rem 4.8rem 6.4rem;
   overflow: auto;
+  background-color: var(--color-grey-50);
 `;
 
 const PrimaryLayout = () => {

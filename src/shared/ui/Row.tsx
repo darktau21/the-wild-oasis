@@ -1,7 +1,6 @@
-import { memo } from 'react';
 import styled, { css } from 'styled-components';
 
-type RowTypes = 'vertical' | 'horizontal';
+type RowTypes = 'horizontal' | 'vertical';
 
 type RowProps = {
   type?: RowTypes;
@@ -13,8 +12,8 @@ const Row = styled.div<RowProps>`
   ${(props) =>
     props.type === 'horizontal' &&
     css`
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
     `}
 
   ${(props) =>

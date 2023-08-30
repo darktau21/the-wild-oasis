@@ -8,67 +8,67 @@ const registerOptions = {
 };
 
 type CabinFormProps = PropsWithChildren<{
-  handleSubmit: FormEventHandler;
+  errors: FieldErrors<NewCabin>;
   // onSubmit: SubmitHandler<NewCabin>;
+  handleSubmit: FormEventHandler;
   // onError: SubmitErrorHandler<NewCabin>;
   register: UseFormRegister<NewCabin>;
-  errors: FieldErrors<NewCabin>;
 }>;
 
 const CabinForm = ({
+  children,
+  errors,
   handleSubmit,
   register,
-  errors,
-  children,
 }: CabinFormProps) => {
   return (
     <Form onSubmit={handleSubmit}>
-      <FormRow label={'Cabin name'} id='name' error={errors.name?.message}>
-        <Input type='text' id='name' {...register('name', registerOptions)} />
+      <FormRow error={errors.name?.message} id='name' label={'Cabin name'}>
+        <Input id='name' type='text' {...register('name', registerOptions)} />
       </FormRow>
 
       <FormRow
-        label={'Maximum capacity'}
-        id='maxCapacity'
         error={errors.maxCapacity?.message}
+        id='maxCapacity'
+        label={'Maximum capacity'}
       >
         <Input
-          type='number'
           id='maxCapacity'
+          type='number'
           {...register('maxCapacity', {
             ...registerOptions,
-            min: { value: 1, message: 'Capacity should be at least 1' },
+            min: { message: 'Capacity should be at least 1', value: 1 },
           })}
         />
       </FormRow>
 
       <FormRow
-        label={'Regular price'}
-        id='regularPrice'
         error={errors.regularPrice?.message}
+        id='regularPrice'
+        label={'Regular price'}
       >
         <Input
-          type='number'
           id='regularPrice'
+          type='number'
           {...register('regularPrice', {
             ...registerOptions,
-            min: { value: 1, message: 'Price should be at least 1' },
+            min: { message: 'Price should be at least 1', value: 1 },
           })}
         />
       </FormRow>
 
       <FormRow
-        label={'Discount'}
-        id='discount'
         error={errors.discount?.message}
+        id='discount'
+        label={'Discount'}
       >
         <Input
-          type='number'
-          id='discount'
           defaultValue={0}
+          id='discount'
+          type='number'
           {...register('discount', {
             ...registerOptions,
-            min: { value: 1, message: 'Discount should be at least 1' },
+            min: { message: 'Discount should be at least 1', value: 1 },
             validate: (value, formValues) => {
               if (
                 typeof value === 'undefined' ||
@@ -84,22 +84,22 @@ const CabinForm = ({
       </FormRow>
 
       <FormRow
-        label={'Description for website'}
-        id={'description'}
         error={errors.description?.message}
+        id={'description'}
+        label={'Description for website'}
       >
         <Textarea
-          id='description'
           defaultValue=''
+          id='description'
           {...register('description', registerOptions)}
         />
       </FormRow>
 
-      <FormRow label={'Cabin photo'} id='image'>
+      <FormRow id='image' label={'Cabin photo'}>
         <FileInput
+          accept='image/*'
           id='image'
           type={'file'}
-          accept='image/*'
           {...register('image')}
         />
       </FormRow>

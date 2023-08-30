@@ -1,3 +1,3 @@
 import { CabinForm, CabinRow } from './ui';
 
-export { CabinRow, CabinForm };
+export { CabinForm, CabinRow };

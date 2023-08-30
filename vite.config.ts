@@ -5,8 +5,8 @@ import checker from 'vite-plugin-checker';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), checker({ typescript: true })],
   envPrefix: 'REACT_',
+  plugins: [react(), checker({ typescript: true })],
   resolve: {
     alias: {
       '@app': path.resolve('src/app'),

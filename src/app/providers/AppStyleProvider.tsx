@@ -4,44 +4,44 @@ import { createGlobalStyle } from 'styled-components';
 const StyleProvider = createGlobalStyle`
   :root {
     /* Indigo */
-    --color-brand-50: #eef2ff;
-    --color-brand-100: #e0e7ff;
-    --color-brand-200: #c7d2fe;
-    --color-brand-500: #6366f1;
-    --color-brand-600: #4f46e5;
-    --color-brand-700: #4338ca;
-    --color-brand-800: #3730a3;
-    --color-brand-900: #312e81;
+    --color-brand-50: rgb(238 242 255);
+    --color-brand-100: rgb(224 231 255);
+    --color-brand-200: rgb(199 210 254);
+    --color-brand-500: rgb(99 102 241);
+    --color-brand-600: rgb(79 70 229);
+    --color-brand-700: rgb(67 56 202);
+    --color-brand-800: rgb(55 48 163);
+    --color-brand-900: rgb(49 46 129);
 
     /* Grey */
-    --color-grey-0: #fff;
-    --color-grey-50: #f9fafb;
-    --color-grey-100: #f3f4f6;
-    --color-grey-200: #e5e7eb;
-    --color-grey-300: #d1d5db;
-    --color-grey-400: #9ca3af;
-    --color-grey-500: #6b7280;
-    --color-grey-600: #4b5563;
-    --color-grey-700: #374151;
-    --color-grey-800: #1f2937;
-    --color-grey-900: #111827;
-    --color-blue-100: #e0f2fe;
-    --color-blue-700: #0369a1;
-    --color-green-100: #dcfce7;
-    --color-green-700: #15803d;
-    --color-yellow-100: #fef9c3;
-    --color-yellow-700: #a16207;
-    --color-silver-100: #e5e7eb;
-    --color-silver-700: #374151;
-    --color-indigo-100: #e0e7ff;
-    --color-indigo-700: #4338ca;
-    --color-red-100: #fee2e2;
-    --color-red-700: #b91c1c;
-    --color-red-800: #991b1b;
-    --backdrop-color: rgb(255 255 255 / 10%);
-    --shadow-sm: 0 1px 2px rgb(0 0 0 / 4%);
-    --shadow-md: 0px 0.6rem 2.4rem rgb(0 0 0 / 6%);
-    --shadow-lg: 0 2.4rem 3.2rem rgb(0 0 0 / 12%);
+    --color-grey-0: rgb(255 255 255);
+    --color-grey-50: rgb(249 250 251);
+    --color-grey-100: rgb(243 244 246);
+    --color-grey-200: rgb(229 231 235);
+    --color-grey-300: rgb(209 213 219);
+    --color-grey-400: rgb(156 163 175);
+    --color-grey-500: rgb(107 114 128);
+    --color-grey-600: rgb(75 85 99);
+    --color-grey-700: rgb(55 65 81);
+    --color-grey-800: rgb(31 41 55);
+    --color-grey-900: rgb(17 24 39);
+    --color-blue-100: rgb(224 242 254);
+    --color-blue-700: rgb(3 105 161);
+    --color-green-100: rgb(220 252 231);
+    --color-green-700: rgb(21 128 61);
+    --color-yellow-100: rgb(254 249 195);
+    --color-yellow-700: rgb(161 98 7);
+    --color-silver-100: rgb(229 231 235);
+    --color-silver-700: rgb(55 65 81);
+    --color-indigo-100: rgb(224 231 255);
+    --color-indigo-700: rgb(67 56 202);
+    --color-red-100: rgb(254 226 226);
+    --color-red-700: rgb(185 28 28);
+    --color-red-800: rgb(153 27 27);
+    --backdrop-color: rgb(255 255 255 / 0.1);
+    --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.04);
+    --shadow-md: 0px 0.6rem 2.4rem rgb(0 0 0 / 0.06);
+    --shadow-lg: 0 2.4rem 3.2rem rgb(0 0 0 / 0.12);
     --border-radius-tiny: 3px;
     --border-radius-sm: 5px;
     --border-radius-md: 7px;
@@ -68,12 +68,12 @@ const StyleProvider = createGlobalStyle`
   }
 
   body {
+    min-height: 100vh;
     font-family: "Poppins", sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
     color: var(--color-grey-700);
     transition: color 0.3s, background-color 0.3s;
-    min-height: 100vh;
-    line-height: 1.5;
-    font-size: 1.6rem;
   }
 
   input,
@@ -94,8 +94,8 @@ const StyleProvider = createGlobalStyle`
 
   select:disabled,
   input:disabled {
-    background-color: var(--color-grey-200);
     color: var(--color-grey-500);
+    background-color: var(--color-grey-200);
   }
 
   /* Parent selector, finally 😃 */
@@ -127,8 +127,8 @@ const StyleProvider = createGlobalStyle`
   h4,
   h5,
   h6 {
-    overflow-wrap: break-word;
     hyphens: auto;
+    overflow-wrap: break-word;
   }
 
   img {

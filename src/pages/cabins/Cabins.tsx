@@ -1,12 +1,16 @@
 import { useQuery } from '@tanstack/react-query';
-import { MouseEventHandler, useCallback, useMemo, useState } from 'react';
+import { MouseEventHandler, useCallback, useState } from 'react';
 import { CabinList } from '@widgets/CabinList';
 import { CreateCabinForm } from '@features/createCabin';
-import { Cabin, cabinApi } from '@shared/api';
-import { Button, Heading, Row, Spinner } from '@shared/ui';
+import { cabinApi } from '@shared/api';
+import { Button, Heading, Row } from '@shared/ui';
 
 const Cabins = () => {
   const [showForm, setShowForm] = useState(false);
+  const { data: cabins } = useQuery({
+    queryFn: cabinApi.getAll,
+    queryKey: ['cabins'],
+  });
 
   const handleShowForm: MouseEventHandler = useCallback((event) => {
     event.preventDefault();
@@ -20,8 +24,7 @@ const Cabins = () => {
         <p>Filter / Sort</p>
       </Row>
       <Row>
-        {status === 'loading' ? <Spinner /> : null}
-        {status === 'success' ? <CabinList /> : null}
+        <CabinList cabins={cabins} />
 
         <Button onClick={handleShowForm}>Add new cabin</Button>
         {showForm && <CreateCabinForm onCancel={handleShowForm} />}

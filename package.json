@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "depgraph": "npx depcruise src --include-only \"^src\" --output-type dot | dot -T svg > dependency-graph.svg",
+    "depgraph": "dependency-cruiser --include-only \"^src\" --config .dependency-cruiser.cjs --output-type ddot -- src | dot -T svg > folder-level-dependency-graph.svg",
     "lint:ts": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:css": "stylelint './src/**/*.tsx' --fix"
   },
@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@feature-sliced/eslint-config": "^0.1.0-beta.6",
+    "@logux/stylelint-config": "^0.16.0",
     "@tanstack/eslint-plugin-query": "^4.32.5",
     "@tanstack/react-query-devtools": "^4.33.0",
     "@types/node": "^20.5.3",
@@ -39,6 +40,7 @@
     "eslint-import-resolver-typescript": "^3.6.0",
     "eslint-plugin-boundaries": "^3.4.0",
     "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-perfectionist": "^1.5.1",
     "eslint-plugin-react": "latest",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",

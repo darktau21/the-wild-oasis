@@ -12,17 +12,17 @@ import Spinner from './Spinner';
 import * as TableComponents from './Table';
 
 export {
-  Heading,
-  Row,
-  Sidebar,
+  Button,
+  Container,
   Header,
-  NavigationLink,
+  Heading,
   Logo,
   MainNav,
+  NavigationLink,
+  Row,
+  Sidebar,
   Spinner,
-  Container,
-  Button,
 };
 
-export const { Form, FormRow, Input, FileInput, Textarea } = FormComponents;
+export const { FileInput, Form, FormRow, Input, Textarea } = FormComponents;
 export const { Table, TableHeader, TableRow } = TableComponents;

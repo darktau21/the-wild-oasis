@@ -6,9 +6,10 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
-    '@feature-sliced',
+    'plugin:perfectionist/recommended-natural',
     'plugin:react/recommended',
     'plugin:@tanstack/eslint-plugin-query/recommended',
+    '@feature-sliced',
     'prettier',
   ],
   settings: {
@@ -46,10 +47,13 @@ module.exports = {
     '@typescript-eslint',
     'react',
     'react-refresh',
+    'perfectionist',
     'import',
     '@tanstack/query',
   ],
   rules: {
     'react/react-in-jsx-scope': 'off',
+    'perfectionist/sort-imports': 'off',
+    'perfectionist/sort-named-imports': 'off',
   },
 };
