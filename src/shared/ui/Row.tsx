@@ -9,23 +9,22 @@ type RowProps = {
 const Row = styled.div<RowProps>`
   display: flex;
 
-  ${(props) =>
-    props.type === 'horizontal' &&
-    css`
-      align-items: center;
-      justify-content: space-between;
-    `}
+  ${({ type }) => {
+    type ??= 'vertical';
 
-  ${(props) =>
-    props.type === 'vertical' &&
-    css`
-      flex-direction: column;
-      gap: 1.6rem;
-    `}
+    switch (type) {
+      case 'horizontal':
+        return css`
+          align-items: center;
+          justify-content: space-between;
+        `;
+      case 'vertical':
+        return css`
+          flex-direction: column;
+          gap: 1.6rem;
+        `;
+    }
+  }}
 `;
-
-Row.defaultProps = {
-  type: 'vertical',
-};
 
 export default Row;

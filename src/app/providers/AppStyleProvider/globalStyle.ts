@@ -1,7 +1,6 @@
-import { PropsWithChildren } from 'react';
-import { createGlobalStyle } from 'styled-components';
+import { css } from 'styled-components';
 
-const StyleProvider = createGlobalStyle`
+const globalStyle = css`
   :root {
     /* Indigo */
     --color-brand-50: rgb(238 242 255);
@@ -60,7 +59,9 @@ const StyleProvider = createGlobalStyle`
     margin: 0;
 
     /* Creating animations for dark mode */
-    transition: background-color 0.3s, border 0.3s;
+    transition:
+      background-color 0.3s,
+      border 0.3s;
   }
 
   html {
@@ -69,11 +70,13 @@ const StyleProvider = createGlobalStyle`
 
   body {
     min-height: 100vh;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 1.6rem;
     line-height: 1.5;
     color: var(--color-grey-700);
-    transition: color 0.3s, background-color 0.3s;
+    transition:
+      color 0.3s,
+      background-color 0.3s;
   }
 
   input,
@@ -139,13 +142,4 @@ const StyleProvider = createGlobalStyle`
   }
 `;
 
-const AppStyleProvider = ({ children }: PropsWithChildren) => {
-  return (
-    <>
-      <StyleProvider />
-      {children}
-    </>
-  );
-};
-
-export default AppStyleProvider;
+export default globalStyle;

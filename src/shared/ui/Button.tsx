@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import styled, { css } from 'styled-components';
 
 const sizes = {
@@ -53,13 +54,13 @@ type ButtonProps = {
   variation?: keyof typeof variations;
 };
 
-const Button = styled.button<ButtonProps>`
+const Button = memo(styled.button<ButtonProps>`
   border: none;
   border-radius: var(--border-radius-sm);
   box-shadow: var(--shadow-sm);
 
   ${({ size }) => sizes[size ?? 'medium']}
   ${({ variation }) => variations[variation ?? 'primary']}
-`;
+`);
 
 export default Button;

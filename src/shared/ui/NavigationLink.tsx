@@ -1,7 +1,8 @@
+import { memo } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-const NavigationLink = styled(NavLink)`
+const NavigationLink = memo(styled(NavLink)`
   &:link,
   &:visited {
     display: flex;
@@ -38,6 +39,6 @@ const NavigationLink = styled(NavLink)`
   &.active:visited svg {
     color: var(--color-brand-600);
   }
-`;
+`);
 
 export default NavigationLink;

@@ -20,7 +20,7 @@ const StyledMain = styled.main`
 const PrimaryLayout = () => {
   return (
     <StyledPrimaryLayout>
-      <Header />
+      <Header>Header</Header>
       <AppSidebar />
       <StyledMain>
         <Container>

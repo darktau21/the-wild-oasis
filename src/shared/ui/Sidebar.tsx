@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+import React, { memo, PropsWithChildren } from 'react';
 import styled from 'styled-components';
 
 const StyledAside = styled.aside`
@@ -13,8 +13,8 @@ const StyledAside = styled.aside`
 
 type SidebarProps = PropsWithChildren;
 
-const Sidebar = ({ children }: SidebarProps) => {
+const Sidebar = memo(function Sidebar({ children }: SidebarProps) {
   return <StyledAside>{children}</StyledAside>;
-};
+});
 
 export default Sidebar;

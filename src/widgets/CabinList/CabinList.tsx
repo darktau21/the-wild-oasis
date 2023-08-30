@@ -1,14 +1,16 @@
+import { useQuery } from '@tanstack/react-query';
 import { memo } from 'react';
 import { DeleteCabin } from '@features/deleteCabin';
 import { CabinRow } from '@entities/cabin';
-import { Cabin } from '@shared/api';
+import { cabinApi } from '@shared/api';
 import { Spinner, Table, TableHeader } from '@shared/ui';
 
-type CabinListProps = {
-  cabins?: Cabin[];
-};
+const CabinList = memo(function CabinsList() {
+  const { data: cabins } = useQuery({
+    queryFn: cabinApi.getAll,
+    queryKey: ['cabins'],
+  });
 
-const CabinList = memo(function CabinsList({ cabins }: CabinListProps) {
   if (!cabins?.length) {
     return <Spinner />;
   }

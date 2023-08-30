@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import styled, { keyframes } from 'styled-components';
 
 const rotate = keyframes`
@@ -6,7 +7,7 @@ const rotate = keyframes`
   }
 `;
 
-const Spinner = styled.div`
+const Spinner = memo(styled.div`
   width: 6.4rem;
   aspect-ratio: 1;
   margin: 4.8rem auto;
@@ -21,6 +22,6 @@ const Spinner = styled.div`
     rgb(0 0 0) 0
   );
   animation: ${rotate} 1.5s infinite linear;
-`;
+`);
 
 export default Spinner;

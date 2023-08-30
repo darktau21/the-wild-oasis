@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react';
+import { memo, PropsWithChildren } from 'react';
 import styled from 'styled-components';
 
 const NavList = styled.ul`
@@ -9,12 +9,12 @@ const NavList = styled.ul`
 
 type MainNavProps = PropsWithChildren;
 
-const MainNav = ({ children }: MainNavProps) => {
+const MainNav = memo(function MainNav({ children }: MainNavProps) {
   return (
     <nav>
       <NavList>{children}</NavList>
     </nav>
   );
-};
+});
 
 export default MainNav;
