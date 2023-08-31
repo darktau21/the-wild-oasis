@@ -7,7 +7,7 @@ import CabinName from './CabinName';
 import CabinPrice from './CabinPrice';
 
 type CabinRowProps = PropsWithChildren<{
-  discount: number;
+  discount: null | number;
   imageURL: null | string;
   maxCapacity: number;
   name: string;
@@ -27,7 +27,7 @@ const CabinRow = memo(function CabinRow({
       <CabinName>{name}</CabinName>
       <div>Fits up to {maxCapacity} guests</div>
       <CabinPrice>{formatCurrency(regularPrice)}</CabinPrice>
-      <CabinDiscount>{discount}</CabinDiscount>
+      {discount ? <CabinDiscount>{discount}</CabinDiscount> : <span>&mdash;</span>}
       {children}
     </TableRow>
   );

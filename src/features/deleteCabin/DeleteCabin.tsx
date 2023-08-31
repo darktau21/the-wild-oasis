@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import React, { memo } from 'react';
+import { memo } from 'react';
 import toast from 'react-hot-toast';
 import { cabinApi } from '@shared/api';
 import { Button } from '@shared/ui';

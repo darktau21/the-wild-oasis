@@ -1,4 +1,4 @@
-import React, { memo, PropsWithChildren } from 'react';
+import { memo, PropsWithChildren } from 'react';
 import styled from 'styled-components';
 
 const StyledAside = styled.aside`

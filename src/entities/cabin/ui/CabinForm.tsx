@@ -68,14 +68,14 @@ const CabinForm = ({
           type='number'
           {...register('discount', {
             ...registerOptions,
-            min: { message: 'Discount should be at least 1', value: 1 },
+            min: { message: 'Discount should be 0 or higher', value: 0 },
             validate: (value, formValues) => {
               if (
                 typeof value === 'undefined' ||
                 typeof formValues.regularPrice === 'undefined'
               )
                 return;
-              if (formValues.regularPrice < value) {
+              if (+formValues.regularPrice < +value) {
                 return 'Discount should be less than price';
               }
             },

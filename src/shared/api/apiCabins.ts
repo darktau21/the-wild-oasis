@@ -5,7 +5,7 @@ const SUPABASE_URL = import.meta.env.REACT_SUPABASE_URL;
 
 export type NewCabin = {
   description: string;
-  discount: number;
+  discount?: number;
   image?: FileList;
   maxCapacity: number;
   name: string;
@@ -14,7 +14,7 @@ export type NewCabin = {
 
 export type Cabin = {
   description: string;
-  discount: number;
+  discount: null | number;
   id: number;
   imageURL: null | string;
   maxCapacity: number;
@@ -28,6 +28,7 @@ export async function getAll() {
     .select('*');
 
   if (error) {
+    console.error(error.message);
     throw new Error('Could not load cabins');
   }
 
@@ -49,6 +50,7 @@ export async function create(newCabin: NewCabin) {
   const cabinID = cabin?.id;
 
   if (creationError) {
+    console.error(creationError.message);
     throw new Error(errorMessage);
   }
 
@@ -61,6 +63,7 @@ export async function create(newCabin: NewCabin) {
       .upload(imageName, image);
 
     if (storageError) {
+      console.error(storageError.message);
       await remove(cabinID!);
       throw new Error(errorMessage);
     }
@@ -71,6 +74,7 @@ export async function create(newCabin: NewCabin) {
       .eq('id', cabinID!);
 
     if (updatingError) {
+      console.error(updatingError.message);
       await remove(cabinID!);
       throw new Error(errorMessage);
     }

@@ -1,5 +1,5 @@
 import { StrictMode } from 'react';
-import ReactDOM from 'react-dom/client';
+import { createRoot } from 'react-dom/client';
 import {
   AppNotificationsProvider,
   AppQueryProvider,
@@ -7,9 +7,7 @@ import {
   AppStyleProvider,
 } from './providers';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLDivElement
-);
+const root = createRoot(document.getElementById('root') as HTMLDivElement);
 root.render(
   <StrictMode>
     <AppStyleProvider>

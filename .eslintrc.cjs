@@ -31,7 +31,7 @@ module.exports = {
         node: true,
       },
       files: [
-        '.eslintrc.{js,cjs}',
+        'src/**/*.{ts,tsx}',
       ],
       parserOptions: {
         sourceType: 'module',
@@ -48,12 +48,12 @@ module.exports = {
     'react',
     'react-refresh',
     'perfectionist',
-    'import',
     '@tanstack/query',
   ],
   rules: {
     'react/react-in-jsx-scope': 'off',
     'perfectionist/sort-imports': 'off',
     'perfectionist/sort-named-imports': 'off',
+    'import/no-internal-modules': 'off'
   },
 };
