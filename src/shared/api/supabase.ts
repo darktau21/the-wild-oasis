@@ -1,10 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
+import { SUPABASE_KEY, SUPABASE_URL } from '@shared/api/constants';
 import { Database } from './apiTypes';
 
-const env = import.meta.env;
-
-const supabaseUrl = env.REACT_SUPABASE_URL;
-const supabaseKey = env.REACT_SUPABASE_KEY;
-const supabaseClient = createClient<Database>(supabaseUrl, supabaseKey);
+const supabaseClient = createClient<Database>(SUPABASE_URL, SUPABASE_KEY);
 
 export default supabaseClient;
