@@ -1,4 +1,2 @@
-import CabinForm from './CabinForm';
-import CabinRow from './CabinRow';
-
-export { CabinForm, CabinRow };
+export { default as CabinForm } from './Form';
+export { default as CabinRow } from './Row';

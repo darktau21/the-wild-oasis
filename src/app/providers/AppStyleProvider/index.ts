@@ -1,3 +1,1 @@
-import AppStyleProvider from './AppStyleProvider';
-
-export { AppStyleProvider };
+export { default as AppStyleProvider } from './Provider';

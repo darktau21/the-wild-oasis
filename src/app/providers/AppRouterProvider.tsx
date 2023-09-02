@@ -5,7 +5,7 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 import Error from '@pages/error';
-import { PrimaryLayout } from '@pages/layouts';
+import { ClearLayout, PrimaryLayout } from '@pages/layouts';
 import Login from '@pages/login';
 import { PAGE_PATHS } from '@shared/lib/react-router';
 
@@ -14,7 +14,7 @@ const Bookings = lazy(() => import('@pages/bookings'));
 const Cabins = lazy(() => import('@pages/cabins'));
 const Dashboard = lazy(() => import('@pages/dashboard'));
 const Settings = lazy(() => import('@pages/settings'));
-const Users = lazy(() => import('@pages/users'));
+const UserList = lazy(() => import('@pages/users'));
 
 const router = createBrowserRouter([
   {
@@ -44,22 +44,27 @@ const router = createBrowserRouter([
         path: PAGE_PATHS.settings,
       },
       {
-        element: <Users />,
+        element: <UserList />,
         path: PAGE_PATHS.users,
-      },
-      {
-        element: <Error />,
-        path: PAGE_PATHS.notFound,
       },
     ],
     element: <PrimaryLayout />,
   },
   {
-    element: <Login />,
-    path: PAGE_PATHS.login,
+    children: [
+      {
+        element: <Login />,
+        path: PAGE_PATHS.login,
+      },
+    ],
+    element: <ClearLayout />,
   },
   {
     element: <Error />,
+    path: PAGE_PATHS.notFound,
+  },
+  {
+    element: <Navigate to={PAGE_PATHS.notFound} />,
     path: '*',
   },
 ]);

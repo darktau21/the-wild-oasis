@@ -1,3 +1,1 @@
-import CabinList from './CabinList';
-
-export { CabinList };
+export { default as CabinList } from './List';

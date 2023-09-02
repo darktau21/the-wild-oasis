@@ -1,11 +1,4 @@
-import AppNotificationsProvider from './AppNotificationsProvider';
-import AppQueryProvider from './AppQueryProvider';
-import AppRouterProvider from './AppRouterProvider';
-import { AppStyleProvider } from './AppStyleProvider';
-
-export {
-  AppNotificationsProvider,
-  AppQueryProvider,
-  AppRouterProvider,
-  AppStyleProvider,
-};
+export { default as AppNotificationsProvider } from './AppNotificationsProvider';
+export { default as AppQueryProvider } from './AppQueryProvider';
+export { default as AppRouterProvider } from './AppRouterProvider';
+export { AppStyleProvider } from './AppStyleProvider';

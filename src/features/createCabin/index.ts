@@ -1,3 +1,1 @@
-import CreateCabinForm from './CreateCabinForm';
-
-export { CreateCabinForm };
+export { default as CreateCabinForm } from './Form';

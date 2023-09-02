@@ -1,28 +1,12 @@
-import Button from './Button';
-import Container from './Container';
-import * as FormComponents from './Form';
-import Header from './Header';
-import Heading from './Heading';
-import Logo from './Logo';
-import MainNav from './MainNav';
-import NavigationLink from './NavigationLink';
-import Row from './Row';
-import Sidebar from './Sidebar';
-import Spinner from './Spinner';
-import * as TableComponents from './Table';
-
-export {
-  Button,
-  Container,
-  Header,
-  Heading,
-  Logo,
-  MainNav,
-  NavigationLink,
-  Row,
-  Sidebar,
-  Spinner,
-};
-
-export const { FileInput, Form, FormRow, Input, Textarea } = FormComponents;
-export const { Table, TableHeader, TableRow } = TableComponents;
+export { default as UIButton } from './Button';
+export { default as UIContainer } from './Container';
+export * as UIFormComponents from './Form';
+export { default as UIHeader } from './Header';
+export { default as UIHeading } from './Heading';
+export { default as UILogo } from './Logo';
+export { default as UIMainNav } from './MainNav';
+export { default as UINavigationLink } from './NavigationLink';
+export { default as UIRow } from './Row';
+export { default as UISidebar } from './Sidebar';
+export { default as UISpinner } from './Spinner';
+export * as UITableComponents from './Table';

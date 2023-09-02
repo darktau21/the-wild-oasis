@@ -1,2 +1,1 @@
-import useMutateQueryForm from './useMutateQueryForm';
-export { useMutateQueryForm };
+export { default as useMutationQueryForm } from './useMutationQueryForm';

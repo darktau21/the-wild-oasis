@@ -12,7 +12,7 @@
     "visualize:sunburst": "vite-bundle-visualizer --template sunburst",
     "preview": "vite preview",
     "depgraph": "dependency-cruiser --include-only \"^src\" --config .dependency-cruiser.cjs --output-type ddot -- src | dot -T svg > folder-level-dependency-graph.svg",
-    "lint:ts": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:ts": "eslint --ext ts,tsx --report-unused-disable-directives --fix --max-warnings 0",
     "lint:css": "stylelint './src/**/*.tsx' --fix",
     "sb:start": "supabase start",
     "sb:status": "supabase status",
