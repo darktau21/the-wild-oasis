@@ -1,4 +1,4 @@
-import { memo, PropsWithChildren } from 'react';
+import { PropsWithChildren, memo } from 'react';
 import styled from 'styled-components';
 
 const NavList = styled.ul`

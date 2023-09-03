@@ -114,13 +114,13 @@ export interface Database {
         }
         Insert: {
           created_at?: string
-          description: string
+          description?: string
           discount?: number | null
           id?: number
           imageURL?: string | null
-          maxCapacity: number
-          name: string
-          regularPrice: number
+          maxCapacity?: number
+          name?: string
+          regularPrice?: number
         }
         Update: {
           created_at?: string

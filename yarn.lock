@@ -2216,7 +2216,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:latest":
+"@typescript-eslint/eslint-plugin@npm:^6.5.0":
   version: 6.5.0
   resolution: "@typescript-eslint/eslint-plugin@npm:6.5.0"
   dependencies:
@@ -2241,7 +2241,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:latest":
+"@typescript-eslint/parser@npm:^6.5.0":
   version: 6.5.0
   resolution: "@typescript-eslint/parser@npm:6.5.0"
   dependencies:
@@ -7203,8 +7203,8 @@ __metadata:
     "@types/node": ^20.5.3
     "@types/react": ^18.2.15
     "@types/react-dom": ^18.2.7
-    "@typescript-eslint/eslint-plugin": latest
-    "@typescript-eslint/parser": latest
+    "@typescript-eslint/eslint-plugin": ^6.5.0
+    "@typescript-eslint/parser": ^6.5.0
     "@vitejs/plugin-react": ^4.0.3
     autoprefixer: ^10.4.15
     dependency-cruiser: ^13.1.4

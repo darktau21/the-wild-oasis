@@ -1,7 +1,8 @@
-import { MouseEventHandler, useCallback, useState } from 'react';
-import { CabinList } from '@widgets/CabinList';
 import { CreateCabinForm } from '@features/createCabin';
 import { UIButton, UIRow } from '@shared/ui';
+import { CabinList } from '@widgets/cabinList';
+import { MouseEventHandler, useCallback, useState } from 'react';
+
 import Header from './Header';
 
 const CabinsPage = () => {

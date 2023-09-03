@@ -4,7 +4,12 @@ import {
   useMutation,
   useQueryClient,
 } from '@tanstack/react-query';
-import { DefaultValues, SubmitHandler, useForm } from 'react-hook-form';
+import {
+  DefaultValues,
+  FieldValues,
+  SubmitHandler,
+  useForm,
+} from 'react-hook-form';
 import toast from 'react-hot-toast';
 
 type useMutateQueryFormOptions<Data> = {
@@ -14,23 +19,23 @@ type useMutateQueryFormOptions<Data> = {
   successMessage: string;
 };
 
-const useMutationQueryForm = <FormValues extends object>({
+const useMutationQueryForm = <TFields extends FieldValues>({
   defaultValues,
   mutationFn,
   queryKey,
   successMessage,
-}: useMutateQueryFormOptions<FormValues>) => {
+}: useMutateQueryFormOptions<TFields>) => {
   const {
     formState,
     handleSubmit: hookFormHandleSubmit,
     register,
     reset,
-  } = useForm<FormValues>({
+  } = useForm<TFields>({
     defaultValues,
   });
   const { errors } = formState;
   const queryClient = useQueryClient();
-  const { mutate } = useMutation<void, unknown, FormValues, unknown>({
+  const { mutate } = useMutation<void, unknown, TFields, unknown>({
     mutationFn,
     onError: (error) => {
       if (error instanceof Error) {
@@ -44,7 +49,7 @@ const useMutationQueryForm = <FormValues extends object>({
     },
   });
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => mutate(data);
+  const onSubmit: SubmitHandler<TFields> = (data) => mutate(data);
 
   return { errors, handleSubmit: hookFormHandleSubmit(onSubmit), register };
 };

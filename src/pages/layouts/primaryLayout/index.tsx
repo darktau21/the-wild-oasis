@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import styled from 'styled-components';
 import { UIContainer, UIHeader, UISpinner } from '@shared/ui';
+
 import Sidebar from './Sidebar';
 
 const StyledLayout = styled.div`

@@ -1,28 +1,7 @@
 import { uploadImage } from './apiImages';
 import { ERROR_MESSAGES } from './constants';
+import { Cabin, NewCabin } from './entityTypes';
 import supabaseClient from './supabase';
-
-export type NewCabin = {
-  description: string;
-  discount?: number;
-  image?: FileList;
-  maxCapacity: number;
-  name: string;
-  regularPrice: number;
-};
-
-export type Cabin = {
-  description: string;
-  discount: null | number;
-  id: number;
-  imageURL: null | string;
-  maxCapacity: number;
-  name: string;
-  regularPrice: number;
-};
-
-export type UpdateCabin = Pick<Cabin, 'id' | 'imageURL'> &
-  Partial<Exclude<NewCabin, 'image'>>;
 
 export async function getAll() {
   const { data: cabins, error } = await supabaseClient
@@ -39,12 +18,11 @@ export async function getAll() {
 
 export async function create(newCabin: NewCabin) {
   const image = newCabin.image?.[0];
-  delete newCabin.image;
 
   const { data: cabin, error: creationError } = await supabaseClient
     .from('cabins')
     .insert([newCabin])
-    .select('id')
+    .select()
     .single();
 
   if (creationError || !cabin) {
@@ -57,7 +35,7 @@ export async function create(newCabin: NewCabin) {
     try {
       const imageURL = await uploadImage(image, 'cabin-imgs');
 
-      await update({ id, imageURL });
+      await update({ ...cabin, imageURL });
     } catch (error) {
       if (error instanceof Error) {
         await remove(id);
@@ -67,8 +45,8 @@ export async function create(newCabin: NewCabin) {
   }
 }
 
-export async function update(updateCabin: UpdateCabin) {
-  const { data: updatedCabin, error: updatingError } = await supabaseClient
+export async function update(updateCabin: NewCabin) {
+  const { error: updatingError } = await supabaseClient
     .from('cabins')
     .update(updateCabin)
     .eq('id', updateCabin.id)
@@ -78,8 +56,6 @@ export async function update(updateCabin: UpdateCabin) {
     console.error(updatingError.message);
     throw new Error(ERROR_MESSAGES.cabin.update);
   }
-
-  return updatedCabin;
 }
 
 export async function remove(id: Cabin['id']) {

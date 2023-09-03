@@ -1,9 +1,9 @@
-import { useQuery } from '@tanstack/react-query';
-import { memo } from 'react';
-import { RemoveCabinButton } from '@features/removeCabin';
 import { CabinRow } from '@entities/cabin';
+import { RemoveCabinButton } from '@features/removeCabin';
 import { cabinApi } from '@shared/api';
 import { UISpinner, UITableComponents } from '@shared/ui';
+import { useQuery } from '@tanstack/react-query';
+import { memo } from 'react';
 
 const { UITable, UITableHeader } = UITableComponents;
 
